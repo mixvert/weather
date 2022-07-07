@@ -1,0 +1,38 @@
+.form-control {
+  flex: unset !important;
+  width: auto !important;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 31, 84, 0.4) !important;
+  border-color: rgba(0, 31, 84, 0) !important;
+}
+
+.text--color {
+  color: #ffffff;
+}
+
+.nav--color {
+  background-color: #034078;
+}
+
+.btn--search,
+.btn--search:active {
+  background-color: #001f54 !important;
+  color: #ffffff !important;
+  transition: 0.3s;
+}
+
+.btn--search:hover {
+  background-color: #001f54 !important;
+  border-color: #0a1128;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transition: 0.3s;
+}
+
+.btn--search:focus {
+  background-color: #001f54 !important;
+  border-color: #0a1128;
+  transition: 0.3s;
+  box-shadow: 0 0 0 0.25rem rgba(0, 31, 84, 0.4) !important;
+}
