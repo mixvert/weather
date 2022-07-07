@@ -29,13 +29,13 @@ const Result = (props) => {
       <React.Fragment>
         <Container fluid>
           <Row className="">
-            <Col xs={10} sm={2}>
+            <Col xs={6} sm={2}>
               <img
                 src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
                 alt={`${icon}`}
               />
             </Col>
-            <Col xs={10} sm={6}>
+            <Col sm={(6, { order: 2 })} xs={(12, { order: 3 })}>
               <Row>
                 <Col className="d-flex justify-content-end">
                   <h1>{`${Math.round(temp)}`}&#8451;</h1>
@@ -49,7 +49,7 @@ const Result = (props) => {
                 </Col>
               </Row>
             </Col>
-            <Col xs={10} sm={4}>
+            <Col xs={(6, { order: 2 })} sm={(4, { order: 3 })}>
               <Row>
                 <Col className="d-flex justify-content-start justify-content-sm-end">
                   <h4 className="mb-1">{`${city}`}</h4>
