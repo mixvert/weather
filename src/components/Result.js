@@ -25,6 +25,9 @@ const Result = (props) => {
   let content = null;
 
   if (!err && city) {
+    const sunriseTime = new Date(sunrise * 1000).toLocaleTimeString().replace(/(.*)\D\d+/, "$1");
+    const sunsetTime = new Date(sunset * 1000).toLocaleTimeString().replace(/(.*)\D\d+/, "$1");
+
     content = (
       <React.Fragment>
         <Container fluid>
@@ -41,8 +44,8 @@ const Result = (props) => {
                   <h1>{`${Math.round(temp)}`}&#8451;</h1>
                 </Col>
                 <Col>
-                  <Col className="text-muted">Wschód: {`${sunrise}`}</Col>
-                  <Col className="text-muted">Zachód: {`${sunset}`}</Col>
+                  <Col className="text-muted">Wschód: {`${sunriseTime}`}</Col>
+                  <Col className="text-muted">Zachód: {`${sunsetTime}`}</Col>
                   <Col className="text-muted">
                     Wiatr: {`${Math.round(wind)}`} km/h
                   </Col>
