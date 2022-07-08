@@ -38,7 +38,7 @@ const Result = (props) => {
                 alt={`${icon}`}
               />
             </Col>
-            <Col sm={(6, { order: 2 })} xs={(12, { order: 3 })}>
+            <Col sm={(6, { order: 2 })} xs={(12, { order: 3 })} className="mt-2 mt-sm-0">
               <Row>
                 <Col className="d-flex justify-content-end">
                   <h1>{`${Math.round(temp)}`}&#8451;</h1>
@@ -48,6 +48,9 @@ const Result = (props) => {
                   <Col className="text-muted">Zachód: {`${sunsetTime}`}</Col>
                   <Col className="text-muted">
                     Wiatr: {`${Math.round(wind)}`} km/h
+                  </Col>
+                  <Col className="text-muted">
+                    Ciśnienie: {`${pressure}`} hPa
                   </Col>
                 </Col>
               </Row>
@@ -85,6 +88,7 @@ const Result = (props) => {
 
 export default Result;
 
-// Zrobić wstawienie wszystkich danych w stylu pogody na google, ikonę zależnie od tego jaka ma być i do tego zrobić tłumaczenie opisu pogody. Zrobienie również tak aby to jakoś mobilnie wyglądało między innymi tak aby miasto data i opis pogody były na pod ikoną na  górze. Na moblinym zrobić układ wertyklany 1,3,2
+// Ustalić tłumaczenia pogody z angielskiego na polski. Zrobić raczej tłumaczenie w formie tabeli
 //https://openweathermap.org/weather-conditions
 //Przycisk zamieniający celcjusza na farenhaita i jak się go klika to jego zawartość zamienia się na aktualne jednostki
+// Może zmienić widok na ten z openwheatermap
