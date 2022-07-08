@@ -23,6 +23,8 @@ class App extends Component {
     dayOfWeek: "",
     desc: "",
     icon: "",
+    rotation: "",
+    humidity: "",
   };
 
   handleInputChange = (e) => {
@@ -65,7 +67,9 @@ class App extends Component {
           sunset: data.sys.sunset,
           temp: data.main.temp,
           pressure: data.main.pressure,
+          humidity: data.main.humidity,
           wind: data.wind.speed,
+          rotation: data.wind.deg,
           desc: data.weather[0].description,
           icon: data.weather[0].icon,
         });
