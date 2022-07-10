@@ -1,18 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col, Container } from "react-bootstrap";
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationArrow,
   faGaugeSimpleHigh,
 } from "@fortawesome/free-solid-svg-icons";
-
-function Capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
 const Result = (props) => {
   const {
@@ -65,14 +62,68 @@ const Result = (props) => {
               </Row>
               <Row>
                 <Col className="d-flex justify-content-start justify-content-sm-end text-muted">
-                  {Capitalize(desc)}
+                  {desc === 'overcast clouds' ? "Zachmurzenie całkowite" : null}
+                  {desc === 'broken clouds' ? "Pochmurnie" : null}
+                  {desc === 'scattered clouds' ? "Zachmurzenie umiarkowane" : null}
+                  {desc === 'few clouds' ? "Prawie bezchmurnie" : null}
+                  {desc === 'clear sky' ? "Bezchmurnie" : null}
+                  {desc === 'tornado' ? "Tornado" : null}
+                  {desc === 'squalls' ? "Szkwał" : null}
+                  {desc === 'volcanic ash' ? "Pył wulkaniczny" : null}
+                  {desc === 'dust' ? "Pył" : null}
+                  {desc === 'sand' ? "Piasek" : null}
+                  {desc === 'fog' ? "Mgła" : null}
+                  {desc === 'sand/ dust whirls' ? "Burza piaskowa" : null}
+                  {desc === 'Haze' ? "Mgła" : null}
+                  {desc === 'Smoke' ? "Dym" : null}
+                  {desc === 'mist' ? "Mgła" : null}
+                  {desc === 'light snow' ? "Lekkie opady śniegu" : null}
+                  {desc === 'snow' ? "Opady śniegu" : null}
+                  {desc === 'Heavy snow' ? "Duże opady śniegu" : null}
+                  {desc === 'Sleet' ? "Śnieg z deszczem" : null}
+                  {desc === 'Light shower sleet' ? "Lekki deszcz ze śniegiem" : null}
+                  {desc === 'Shower sleet' ? "Deszcz ze śniegiem" : null}
+                  {desc === 'Light rain and snow' ? "Lekki deszcz i śnieg" : null}
+                  {desc === 'Rain and snow' ? "Deszcz i śnieg" : null}
+                  {desc === 'Light shower snow' ? "Lekki deszczowy śnieg" : null}
+                  {desc === 'Shower snow' ? "Deszczowy śnieg" : null}
+                  {desc === 'Heavy shower snow' ? "Mocny deszczowy śnieg" : null}
+                  {desc === 'light rain' ? "Lekki deszcz" : null}
+                  {desc === 'moderate rain' ? "Umiarkowany deszcz" : null}
+                  {desc === 'heavy intensity rain' ? "Intensywny deszcz" : null}
+                  {desc === 'very heavy rain' ? "Bardzo ulewny deszcz" : null}
+                  {desc === 'extreme rain' ? "Ekstremalny deszcz" : null}
+                  {desc === 'freezing rain' ? "Marznący deszcz" : null}
+                  {desc === 'light intensity shower rain' ? "Lekki przelotny deszcz" : null}
+                  {desc === 'shower rain' ? "Przelotny deszcz" : null}
+                  {desc === 'heavy intensity shower rain' ? "Intensywny przelotny deszcz" : null}
+                  {desc === 'ragged shower rain' ? "Postrzępiony intensywny deszcz" : null}
+                  {desc === 'light intensity drizzle' ? "Lekka mżawka" : null}
+                  {desc === 'drizzle' ? "Mżawka" : null}
+                  {desc === 'heavy intensity drizzle' ? "Intensywna mżawka" : null}
+                  {desc === 'light intensity drizzle rain' ? "Lekka mżawka" : null}
+                  {desc === 'drizzle rain' ? "Mżawka" : null}
+                  {desc === 'heavy intensity drizzle rain' ? "Intensywna mżawka" : null}
+                  {desc === 'shower rain and drizzle' ? "Przelotny desz i mżawka" : null}
+                  {desc === 'heavy shower rain and drizzle' ? "Intensywny przelotyn deszcz i mżawka" : null}
+                  {desc === 'shower drizzle' ? "Przelotna mżawka" : null}
+                  {desc === 'thunderstorm with light rain' ? "Burza z lekkim deszczem" : null}
+                  {desc === 'thunderstorm with rain' ? "Burza z deszczem" : null}
+                  {desc === 'thunderstorm with heavy rain' ? "Burza z intensywnym deszczem" : null}
+                  {desc === 'light thunderstorm' ? "Lekka burza" : null}
+                  {desc === 'thunderstorm' ? "Burza" : null}
+                  {desc === 'heavy thunderstorm' ? "Intensywna burza" : null}
+                  {desc === 'ragged thunderstorm' ? "Postrzępiona burza" : null}
+                  {desc === 'thunderstorm with light drizzle' ? "Burza z lekką mżawką" : null}
+                  {desc === 'thunderstorm with drizzle' ? "Burza z mżawką" : null}
+                  {desc === 'thunderstorm with heavy drizzle' ? "Buża z intensywną mżawką" : null}
                 </Col>
               </Row>
             </Col>
             <Col sm={6} xs={12} className="mt-0">
               <Row>
                 <Col xs={4} className="d-flex justify-content-end">
-                  <h1>{`${Math.round(temp)}`}&#8451;</h1>
+                  <span className="temp--size">{`${Math.round(temp)}`}°C</span>
                 </Col>
                 <Col xs={8}>
                   <Row>
@@ -126,14 +177,10 @@ const Result = (props) => {
 
   return (
     <React.Fragment>
-      <div className="">{err ? `Nie znaleziono wyników` : content}</div>
+      <div>{err ? <span className="d-flex justify-content-center">Nie znaleziono wyników</span> : content}</div>
     </React.Fragment>
   );
 };
 
 export default Result;
 
-// Ustalić tłumaczenia pogody z angielskiego na polski. Zrobić raczej tłumaczenie w formie tabeli
-//https://openweathermap.org/weather-conditions
-//Przycisk zamieniający celcjusza na farenhaita i jak się go klika to jego zawartość zamienia się na aktualne jednostki
-// Strefy czasowe

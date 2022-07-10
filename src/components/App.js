@@ -25,7 +25,9 @@ class App extends Component {
     icon: "",
     rotation: "",
     humidity: "",
+    id:"",
   };
+
 
   handleInputChange = (e) => {
     this.setState({
@@ -70,6 +72,7 @@ class App extends Component {
           humidity: data.main.humidity,
           wind: data.wind.speed,
           rotation: data.wind.deg,
+          id: data.weather[0].id,
           desc: data.weather[0].description,
           icon: data.weather[0].icon,
         });

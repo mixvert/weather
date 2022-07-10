@@ -10,6 +10,12 @@
 
 .text--color {
   color: #ffffff;
+  transition: 0.3s;
+}
+
+.text--color:hover {
+  color: #dcdcdc;
+  transition: 0.3s;
 }
 
 .nav--color {
@@ -35,4 +41,35 @@
   border-color: #0a1128;
   transition: 0.3s;
   box-shadow: 0 0 0 0.25rem rgba(0, 31, 84, 0.4) !important;
+}
+
+.btn--group-left, .btn--group-right {
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: rgba(108, 117, 125, 0.5) !important;
+  border: none !important;
+  font-size: 24px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+  box-shadow: none !important;
+  transition: 0.3s;
+}
+
+.btn--group-left {
+  border-right: 1px solid rgba(108, 117, 125, 0.5) !important;
+}
+
+.btn--group-right {
+  border-left: 1px solid rgba(108, 117, 125, 0.5) !important;
+}
+
+.temp--size {
+  font-size: 48px !important;
+  line-height: 48px !important;
+}
+
+.btn-check:active+.btn, .btn-check:checked+.btn, .btn.active, .btn.show, .btn:active {
+  color: #000000 !important;
+  transition: 0.3s;
 }
